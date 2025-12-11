@@ -5,7 +5,7 @@ metadata:
   name: myhelmrepo
   namespace: default
 spec:
-  interval: 5m0s
+  interval: 5m
   url: http://192.168.2.176:8080
   secretRef:
     name: myhelmrepo-secret
@@ -15,6 +15,7 @@ kind: Secret
 metadata:
   name: myhelmrepo-secret
   namespace: default
+type: kubernetes.io/basic-auth
 stringData:
   username: chartuser
   password: mypass
